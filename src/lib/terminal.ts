@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 export type Line = { kind: "in" | "out" | "err" | "accent"; text: string };
 
-export type AppName = "cobrinha" | "matrix" | "trem";
+export type AppName = "cobrinha" | "matrix" | "trem" | "papoi";
 
 export type CommandResult = {
   lines: Line[];
@@ -17,8 +17,11 @@ export type CommandResult = {
 const out = (text: string): Line => ({ kind: "out", text });
 const accent = (text: string): Line => ({ kind: "accent", text });
 
-/** nome do comando -> [descricao, aliases] */
-const catalog: Record<string, { desc: string; alias?: string[] }> = {
+/** nome do comando -> [descricao, aliases]. `hidden` tira o comando da `ajuda` */
+const catalog: Record<
+  string,
+  { desc: string; alias?: string[]; hidden?: boolean }
+> = {
   ajuda: { desc: "lista os comandos disponíveis", alias: ["help", "?"] },
   sobre: { desc: "quem eu sou", alias: ["whoami"] },
   projetos: { desc: "o que eu já construí", alias: ["ls"] },
@@ -29,6 +32,7 @@ const catalog: Record<string, { desc: string; alias?: string[] }> = {
   matrix: { desc: "chuva de caracteres, estilo Matrix", alias: ["cmatrix"] },
   trem: { desc: "um trem passa pelo terminal", alias: ["sl", "train"] },
   limpar: { desc: "limpa a tela", alias: ["clear", "cls"] },
+  papoi: { desc: "easter egg escondido", hidden: true },
 };
 
 function resolve(input: string): string | null {
@@ -76,9 +80,9 @@ export function runCommand(raw: string): CommandResult {
       return {
         lines: [
           out("comandos disponíveis:"),
-          ...Object.entries(catalog).map(([cmd, meta]) =>
-            out(`  ${cmd.padEnd(10)} ${meta.desc}`),
-          ),
+          ...Object.entries(catalog)
+            .filter(([, meta]) => !meta.hidden)
+            .map(([cmd, meta]) => out(`  ${cmd.padEnd(10)} ${meta.desc}`)),
           out(""),
           out("dica: as setas ↑ ↓ repetem o que você já digitou."),
         ],
@@ -164,6 +168,9 @@ export function runCommand(raw: string): CommandResult {
 
     case "trem":
       return { lines: [], app: "trem" };
+
+    case "papoi":
+      return { lines: [], app: "papoi" };
 
     case "limpar":
       return { lines: [], clear: true };

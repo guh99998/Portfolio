@@ -24,12 +24,14 @@ const apps: Record<
   cobrinha: dynamic(() => import("./SnakeGame"), { loading: () => loadingApp }),
   matrix: dynamic(() => import("./MatrixApp"), { loading: () => loadingApp }),
   trem: dynamic(() => import("./TrainRun"), { loading: () => loadingApp }),
+  papoi: dynamic(() => import("./MinionWalk"), { loading: () => loadingApp }),
 };
 
 const farewell: Record<AppName, string> = {
   cobrinha: "até a próxima.",
   matrix: "voltando à realidade.",
   trem: "o trem já passou.",
+  papoi: "o minion já passou dizendo \"papoi!\".",
 };
 
 const banner: Line[] = [
