@@ -7,17 +7,30 @@ import {
   type FormEvent,
   type KeyboardEvent,
 } from "react";
-import { runCommand, type Line } from "@/lib/terminal";
+import { runCommand, type AppName, type Line } from "@/lib/terminal";
 import dynamic from "next/dynamic";
-
-// o jogo so baixa quando alguem digita `cobrinha` — nao pesa no
-// carregamento da home pra quem nunca vai jogar
-const SnakeGame = dynamic(() => import("./SnakeGame"), {
-  loading: () => (
-    <p className="px-4 py-4 font-mono text-xs text-muted">carregando jogo...</p>
-  ),
-});
 import { site } from "@/content/site";
+
+// cada mini-app so baixa quando alguem digita o comando dele — nao pesa
+// no carregamento da home pra quem nunca usa
+const loadingApp = (
+  <p className="px-4 py-4 font-mono text-xs text-muted">carregando...</p>
+);
+
+const apps: Record<
+  AppName,
+  ReturnType<typeof dynamic<{ onExit: () => void }>>
+> = {
+  cobrinha: dynamic(() => import("./SnakeGame"), { loading: () => loadingApp }),
+  matrix: dynamic(() => import("./MatrixApp"), { loading: () => loadingApp }),
+  trem: dynamic(() => import("./TrainRun"), { loading: () => loadingApp }),
+};
+
+const farewell: Record<AppName, string> = {
+  cobrinha: "até a próxima.",
+  matrix: "voltando à realidade.",
+  trem: "o trem já passou.",
+};
 
 const banner: Line[] = [
   { kind: "accent", text: `${site.name} — terminal do portfólio` },
@@ -38,7 +51,7 @@ export default function Terminal() {
   const [history, setHistory] = useState<string[]>([]);
   // -1 = digitando algo novo; 0+ = navegando o historico de tras pra frente
   const [cursor, setCursor] = useState(-1);
-  const [playing, setPlaying] = useState(false);
+  const [activeApp, setActiveApp] = useState<AppName | null>(null);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -55,8 +68,8 @@ export default function Terminal() {
     const typed = value;
     const result = runCommand(typed);
 
-    if (result.game) {
-      setPlaying(true);
+    if (result.app) {
+      setActiveApp(result.app);
     }
 
     if (result.clear) {
@@ -115,19 +128,24 @@ export default function Terminal() {
         </p>
       </div>
 
-      {playing ? (
-        <SnakeGame
-          onExit={() => {
-            setPlaying(false);
-            setLines((current) => [
-              ...current,
-              { kind: "out", text: "até a próxima." },
-              { kind: "out", text: "" },
-            ]);
-            // devolve o foco pro prompt, como sair de um programa de verdade
-            window.setTimeout(() => inputRef.current?.focus(), 0);
-          }}
-        />
+      {activeApp ? (
+        (() => {
+          const App = apps[activeApp];
+          return (
+            <App
+              onExit={() => {
+                setLines((current) => [
+                  ...current,
+                  { kind: "out", text: farewell[activeApp] },
+                  { kind: "out", text: "" },
+                ]);
+                setActiveApp(null);
+                // devolve o foco pro prompt, como sair de um programa de verdade
+                window.setTimeout(() => inputRef.current?.focus(), 0);
+              }}
+            />
+          );
+        })()
       ) : (
         <div
           ref={scrollRef}
@@ -153,7 +171,7 @@ export default function Terminal() {
         </div>
       )}
 
-      {playing ? null : (
+      {activeApp ? null : (
         <form
           onSubmit={handleSubmit}
           className="flex items-center gap-2 border-t border-line px-4 py-3"

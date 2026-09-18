@@ -5,11 +5,13 @@ import { site } from "@/content/site";
 
 export type Line = { kind: "in" | "out" | "err" | "accent"; text: string };
 
+export type AppName = "cobrinha" | "matrix" | "trem";
+
 export type CommandResult = {
   lines: Line[];
   clear?: boolean;
   goTo?: string;
-  game?: boolean;
+  app?: AppName;
 };
 
 const out = (text: string): Line => ({ kind: "out", text });
@@ -24,6 +26,8 @@ const catalog: Record<string, { desc: string; alias?: string[] }> = {
   stack: { desc: "as tecnologias que eu uso" },
   contato: { desc: "como falar comigo", alias: ["email"] },
   cobrinha: { desc: "sim, dá pra jogar aqui dentro", alias: ["snake"] },
+  matrix: { desc: "chuva de caracteres, estilo Matrix", alias: ["cmatrix"] },
+  trem: { desc: "um trem passa pelo terminal", alias: ["sl", "train"] },
   limpar: { desc: "limpa a tela", alias: ["clear", "cls"] },
 };
 
@@ -153,7 +157,13 @@ export function runCommand(raw: string): CommandResult {
       };
 
     case "cobrinha":
-      return { lines: [], game: true };
+      return { lines: [], app: "cobrinha" };
+
+    case "matrix":
+      return { lines: [], app: "matrix" };
+
+    case "trem":
+      return { lines: [], app: "trem" };
 
     case "limpar":
       return { lines: [], clear: true };
