@@ -32,9 +32,11 @@ export const projects: Project[] = [
     slug: "jonathas-films",
     title: "Jonathas Films",
     problem:
-      "Um profissional de audiovisual precisava de um portfólio próprio para mostrar o trabalho sem depender de plataforma de terceiro.",
-    tags: ["React", "Vite", "TypeScript"],
+      "Um profissional de audiovisual precisava de um portfólio próprio para mostrar o trabalho e captar lead, sem depender de plataforma de terceiro.",
+    outcome: "Lead cai direto no Trello, com Pixel da Meta pra rodar tráfego",
+    tags: ["React", "Vite", "TypeScript", "Web3Forms", "Trello API", "Meta Pixel"],
     live: "https://jonathasfilms.com.br/",
+    image: "/projects/jonathas-films.jpg",
     status: "pronto",
   },
   {
@@ -45,15 +47,17 @@ export const projects: Project[] = [
     outcome: "Formulário que cai direto no WhatsApp",
     tags: ["React", "Vite", "TypeScript"],
     live: "https://evandropiassacorretor.com.br/",
+    image: "/projects/evandro-piassa.jpg",
     status: "pronto",
   },
   {
     slug: "site-psicologo",
-    title: "Site para psicólogo",
-    // TODO: me manda o link e o nome que aparece publicamente.
+    title: "José Carlos Magalhães Antônio",
     problem:
       "Um profissional de saúde precisava de um espaço próprio e sóbrio para ser encontrado, sem depender de rede social.",
     tags: ["React", "Vite", "TypeScript"],
+    live: "https://psicologojosemagalhaes.com.br/",
+    image: "/projects/site-psicologo.jpg",
     status: "pronto",
   },
   {
@@ -95,15 +99,6 @@ export const projects: Project[] = [
     // TODO: quando estiver no ar, adicionar `live` e mudar o status pra "pronto".
     tags: ["Java", "Spring Boot", "JWT", "JPA"],
     status: "andamento",
-  },
-  {
-    slug: "frigattopay",
-    title: "FrigattoPay",
-    problem:
-      "Projeto acadêmico em equipe: um MVP de fintech, do modelo de dados às telas.",
-    tags: ["Java", "JSP", "Servlets"],
-    repo: "https://github.com/Alberto-Frigatto/FrigattoPay",
-    status: "pronto",
   },
 ];
 
