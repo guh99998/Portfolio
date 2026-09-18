@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <title>~/</title>
+  <rect width="32" height="32" fill="#6d28d9"/>
+  <!--
+    Desenhado em traço, não em <text>: fonte de sistema renderiza diferente
+    em cada navegador, e favicon não tem como carregar fonte própria.
+    A onda é funda (controle a 7 de distância) porque com traço grosso e
+    onda rasa os dois arcos se fundem num borrão nos 16px da aba.
+  -->
+  <g fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+    <path d="M4.5 17 Q7.5 10 10.5 17 T16.5 17"/>
+    <path d="M19 24 L27 8"/>
+  </g>
+</svg>
