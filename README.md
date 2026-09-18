@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio — Gustavo Lopes
 
-## Getting Started
+Site pessoal: portfólio de desenvolvedor backend com foco em freelances de
+automação, integrações e sites.
 
-First, run the development server:
+Next.js 16 (App Router) · TypeScript · Tailwind v4 · Motion.
+
+## Rodar
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # http://localhost:3000
+npm run build   # build de produção (roda o type-check junto)
+npm start       # serve o build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Onde mexer
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Todo o texto do site está em `src/content/`.** Não precisa abrir componente
+pra mudar conteúdo:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Arquivo | O que tem |
+| --- | --- |
+| `site.ts` | nome, e-mail, WhatsApp, GitHub, LinkedIn, domínio, foto, CV, headline do topo, texto do "sobre" e do "contato", itens do menu |
+| `projects.ts` | os projetos do `#projetos` |
+| `services.ts` | os 4 serviços |
+| `process.ts` | os 3 passos do "como funciona" |
+| `stack.ts` | as caixas de tecnologia + a faixa escura do topo |
 
-## Learn More
+Procure por `TODO:` nesses arquivos — é tudo que ainda falta preencher.
 
-To learn more about Next.js, take a look at the following resources:
+### Pendências
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `site.whatsapp` — DDI + DDD + número, só dígitos (ex: `5511999999999`).
+- `site.github` / `site.linkedin` / `site.url`.
+- `site.photo.src` — coloque a foto em `public/` e aponte aqui. Enquanto for
+  `null`, o site mostra uma moldura vazia no lugar (nada quebra).
+- `site.resume` — mesma coisa para o PDF do currículo. Enquanto for `null`, o
+  botão "Baixar CV" não aparece.
+- `projects.ts` — trocar os 4 projetos de exemplo pelos reais.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Como o visual funciona
 
-## Deploy on Vercel
+As cores são tokens CSS em `src/app/globals.css`. Mudar a paleta inteira é
+mudar aquele bloco `@theme`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A classe `.theme-dark` redefine os mesmos tokens para uma subárvore — é assim
+que a faixa de stack e o bloco de contato ficam escuros sem que nenhum
+componente precise de uma variante de cor. Para deixar qualquer seção escura,
+basta `<Section tone="dark">`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Estrutura
+
+```
+src/
+├─ app/           layout, página, sitemap, robots, ícone, tokens CSS
+├─ components/
+│  ├─ layout/     Header (com scroll-spy), SocialRail, Footer
+│  ├─ sections/   Hero, Marquee, Projects, Services, Process, Stack, About, Contact
+│  └─ ui/         peças reutilizáveis (Button, Reveal, SectionTitle, ProjectCard…)
+├─ content/       ← o texto do site
+└─ lib/           variantes de animação e o construtor do link do WhatsApp
+```
+
+## Formulário de contato
+
+O formulário não tem backend: ele monta uma mensagem formatada e abre o
+WhatsApp (`src/lib/whatsapp.ts`). Ou seja, o contato só chega se a pessoa
+concluir o envio lá. Se um dia quiser capturar todo mundo que preenche, dá pra
+adicionar um `app/api/contact/route.ts` por cima da mesma interface.
