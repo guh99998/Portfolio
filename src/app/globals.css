@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------
+   Tokens. Nao-inline de proposito: assim o var() continua vivo em
+   runtime e qualquer subarvore pode redefinir a paleta inteira
+   (ver .theme-dark), sem precisar de variante de cor nos componentes.
+   --------------------------------------------------------------- */
+@theme {
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-line: #e4e4e7;
+  --color-fg: #18181b;
+  --color-muted: #71717a;
+  --color-accent: #6d28d9;
+  --color-accent-soft: #f5f3ff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Blocos escuros pontuais (faixa de stack, CTA de contato).
+   Redefine os mesmos tokens -> os componentes nao mudam. */
+.theme-dark {
+  --color-bg: #18181b;
+  --color-surface: #212126;
+  --color-line: #3f3f46;
+  --color-fg: #fafafa;
+  --color-muted: #a1a1aa;
+  --color-accent: #a78bfa;
+  --color-accent-soft: #2b2240;
+}
+
+/* Desloca exatamente UMA copia, seja qual for o numero de copias.
+   Assim a emenda e invisivel e a duracao vira "segundos por copia" —
+   nao muda de velocidade quando a lista de tecnologias cresce. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / var(--marquee-copies, 6)));
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Entrada em CSS, nao em JS. Usada acima da dobra: o CSS chega junto com o
+   HTML e anima na primeira pintura, entao o conteudo nunca fica invisivel
+   esperando o bundle. Abaixo da dobra o <Reveal> do Motion continua valendo,
+   porque ate o visitante rolar ate la o JS ja carregou. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility rise {
+  animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility wrap {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* header sticky nao pode cobrir o titulo da secao ancorada */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
