@@ -61,6 +61,17 @@ export const projects: Project[] = [
     status: "pronto",
   },
   {
+    slug: "moneypilot",
+    title: "moneyPilot",
+    problem:
+      "Controlar gastos em planilha depende de lembrar de anotar todo dia — e quando a conta não fecha, o mês já passou.",
+    tags: ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JWT"],
+    live: "https://moneypilot.desenvolvedorgustavolopes.com.br/",
+    repo: "https://github.com/guh99998/moneyPilot",
+    image: "/projects/moneypilot.jpg",
+    status: "pronto",
+  },
+  {
     slug: "pref-scraper",
     title: "pref-scraper",
     problem:
@@ -89,17 +100,6 @@ export const projects: Project[] = [
     outcome: "Reajustes e boletos gerados sem conferência manual",
     tags: ["Python", "Automação", "ERP"],
     // Projeto interno da empresa — sem link publico, e tudo bem.
-    status: "pronto",
-  },
-  {
-    slug: "moneypilot",
-    title: "moneyPilot",
-    problem:
-      "Controlar gastos em planilha depende de lembrar de anotar todo dia — e quando a conta não fecha, o mês já passou.",
-    tags: ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JWT"],
-    live: "https://moneypilot.desenvolvedorgustavolopes.com.br/",
-    repo: "https://github.com/guh99998/moneyPilot",
-    image: "/projects/moneypilot.jpg",
     status: "pronto",
   },
 ];
