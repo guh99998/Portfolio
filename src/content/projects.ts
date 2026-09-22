@@ -99,6 +99,7 @@ export const projects: Project[] = [
     tags: ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JWT"],
     live: "https://moneypilot.desenvolvedorgustavolopes.com.br/",
     repo: "https://github.com/guh99998/moneyPilot",
+    image: "/projects/moneypilot.jpg",
     status: "pronto",
   },
 ];
