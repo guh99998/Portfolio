@@ -96,9 +96,10 @@ export const projects: Project[] = [
     title: "moneyPilot",
     problem:
       "Controlar gastos em planilha depende de lembrar de anotar todo dia — e quando a conta não fecha, o mês já passou.",
-    // TODO: quando estiver no ar, adicionar `live` e mudar o status pra "pronto".
-    tags: ["Java", "Spring Boot", "JWT", "JPA"],
-    status: "andamento",
+    tags: ["Java", "Spring Boot", "PostgreSQL", "Flyway", "JWT"],
+    live: "https://moneypilot.desenvolvedorgustavolopes.com.br/",
+    repo: "https://github.com/guh99998/moneyPilot",
+    status: "pronto",
   },
 ];
 
