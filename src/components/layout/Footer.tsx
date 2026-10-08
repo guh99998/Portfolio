@@ -22,6 +22,7 @@ export default function Footer() {
           <nav aria-label="Páginas" className="mt-3 flex flex-wrap gap-x-5 gap-y-1">
             {[
               { href: "/projetos", label: "projetos" },
+              { href: "/sites", label: "criação de sites" },
               { href: "/glossario", label: "glossário de tecnologia" },
               { href: "/aprendizado", label: "aprendizado" },
             ].map((page) => (

@@ -16,13 +16,13 @@ export type Project = {
    *                da grade, sem precisar de secao separada.
    */
   status?: "pronto" | "andamento";
+  /** "site" aparece como case na pagina /sites. */
+  kind?: "site";
 };
 
 /**
- * A ORDEM E A VITRINE. Sites primeiro, porque e o servico que voce vende
- * de fato pra fora — quem chega procurando landing page ve o trabalho dele
- * antes de qualquer outra coisa. Automacao e dados logo atras, academico
- * no fim.
+ * A ORDEM E A VITRINE. Projetos com kind "site" aparecem so em /sites;
+ * o portfolio mostra o resto, nesta ordem.
  *
  * TODO: adicione aqui os projetos que voce esta construindo agora, com
  * status: "andamento".
@@ -30,6 +30,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "jonathas-films",
+    kind: "site",
     title: "Jonathas Films",
     problem:
       "Um profissional de audiovisual precisava de um portfólio próprio para mostrar o trabalho e captar lead, sem depender de plataforma de terceiro.",
@@ -41,6 +42,7 @@ export const projects: Project[] = [
   },
   {
     slug: "evandro-piassa",
+    kind: "site",
     title: "Evandro Piassa Corretor",
     problem:
       "Um corretor não tinha canal próprio para captar clientes e dependia só de indicação e rede social.",
@@ -52,6 +54,7 @@ export const projects: Project[] = [
   },
   {
     slug: "site-psicologo",
+    kind: "site",
     title: "José Carlos Magalhães Antônio",
     problem:
       "Um profissional de saúde precisava de um espaço próprio e sóbrio para ser encontrado, sem depender de rede social.",
@@ -105,10 +108,13 @@ export const projects: Project[] = [
 ];
 
 /** Prontos primeiro, em andamento depois. */
-export const sortedProjects = [
+const ordered = [
   ...projects.filter((p) => p.status !== "andamento"),
   ...projects.filter((p) => p.status === "andamento"),
 ];
+
+/** Portfolio (home, /projetos, terminal): sites ficam so em /sites. */
+export const sortedProjects = ordered.filter((p) => p.kind !== "site");
 
 /**
  * Quantos aparecem na home. 3 = uma linha cheia no desktop, 6 = duas.
@@ -124,3 +130,6 @@ export const homeProjects = sortedProjects.slice(0, HOME_LIMIT);
 
 /** O link "ver mais" so aparece se existir mais coisa. Nunca mente. */
 export const hasMoreProjects = sortedProjects.length > HOME_LIMIT;
+
+/** Cases de sites, usados na pagina /sites. */
+export const siteProjects = ordered.filter((p) => p.kind === "site");

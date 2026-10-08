@@ -1,5 +1,4 @@
 import { sortedProjects } from "@/content/projects";
-import { services } from "@/content/services";
 import { byCategory, counts, mastered } from "@/content/roadmap";
 import { site } from "@/content/site";
 
@@ -25,7 +24,6 @@ const catalog: Record<
   ajuda: { desc: "lista os comandos disponíveis", alias: ["help", "?"] },
   sobre: { desc: "quem eu sou", alias: ["whoami"] },
   projetos: { desc: "o que eu já construí", alias: ["ls"] },
-  servicos: { desc: "o que eu faço por você", alias: ["servi\u00e7os"] },
   stack: { desc: "as tecnologias que eu uso" },
   contato: { desc: "como falar comigo", alias: ["email"] },
   cobrinha: { desc: "sim, dá pra jogar aqui dentro", alias: ["snake"] },
@@ -117,19 +115,6 @@ export function runCommand(raw: string): CommandResult {
             out(""),
           ]),
           out("veja todos com link e imagem em /projetos."),
-        ],
-      };
-
-    case "servicos":
-      return {
-        lines: [
-          out("o que eu faço:"),
-          out(""),
-          ...services.map((service, index) =>
-            out(`  ${String(index + 1).padStart(2, "0")}  ${service.title}`),
-          ),
-          out(""),
-          out("detalhes em #servicos."),
         ],
       };
 

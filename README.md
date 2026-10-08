@@ -22,7 +22,6 @@ pra mudar conteúdo:
 | --- | --- |
 | `site.ts` | nome, e-mail, WhatsApp, GitHub, LinkedIn, domínio, foto, CV, headline do topo, texto do "sobre" e do "contato", itens do menu |
 | `projects.ts` | os projetos do `#projetos` |
-| `services.ts` | os 4 serviços |
 | `process.ts` | os 3 passos do "como funciona" |
 | `stack.ts` | as caixas de tecnologia + a faixa escura do topo |
 
@@ -55,7 +54,7 @@ src/
 ├─ app/           layout, página, sitemap, robots, ícone, tokens CSS
 ├─ components/
 │  ├─ layout/     Header (com scroll-spy), SocialRail, Footer
-│  ├─ sections/   Hero, Marquee, Projects, Services, Process, Stack, About, Contact
+│  ├─ sections/   Hero, Marquee, Projects, Stack, About, Contact
 │  └─ ui/         peças reutilizáveis (Button, Reveal, SectionTitle, ProjectCard…)
 ├─ content/       ← o texto do site
 └─ lib/           variantes de animação e o construtor do link do WhatsApp

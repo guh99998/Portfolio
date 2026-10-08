@@ -2,7 +2,6 @@ import { contact, site } from "@/content/site";
 import Reveal from "@/components/ui/Reveal";
 import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
-import WhatsAppForm from "@/components/ui/WhatsAppForm";
 import {
   ExternalIcon,
   GitHubIcon,
@@ -25,7 +24,7 @@ export default function Contact() {
     <Section id="contato" tone="dark">
       <SectionTitle>{contact.title}</SectionTitle>
 
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <div>
         <Reveal>
           <div>
             <p className="max-w-md font-mono text-xl leading-snug text-balance">
@@ -58,9 +57,6 @@ export default function Contact() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <WhatsAppForm />
-        </Reveal>
       </div>
     </Section>
   );

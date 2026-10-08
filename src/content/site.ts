@@ -37,7 +37,7 @@ export const hero = {
     { text: " que tiram o trabalho manual das suas mãos." },
   ] as HeadlineSegment[],
   intro:
-    "Sou desenvolvedor backend. Transformo processos repetitivos em código que roda sozinho — automações, análise de dados e sites sob medida — pra que o seu time gaste tempo com o que só gente consegue fazer.",
+    "Sou desenvolvedor backend. Transformo processos repetitivos em código que roda sozinho — automações, integrações e análise de dados — pra que o seu time gaste tempo com o que só gente consegue fazer.",
   // TODO: revisar com as suas palavras. O numero e real, do pref-scraper.
   detail:
     "Não aprendi isso num curso: aprendi vendo gente perder semanas em tarefa repetitiva, todo mês, no meu próprio trabalho. A consulta de IPTU de centenas de imóveis levava cerca de uma semana e virou uma execução de três minutos. É esse tipo de conta que eu venho fazer na sua empresa.",
@@ -58,13 +58,13 @@ export const about = {
 export const contact = {
   title: "contato",
   lead: "Tem um processo manual que consome o tempo do seu time, ou um projeto pra tirar do papel?",
-  body: "Me conta rapidamente o que você precisa. Eu respondo com uma primeira leitura do problema e um caminho possível — sem compromisso e sem enrolação.",
+  body: "Me chama por e-mail, GitHub ou LinkedIn e conta o que você precisa. Eu respondo com uma primeira leitura do problema e um caminho possível — sem compromisso e sem enrolação.",
 };
 
 export const nav = [
   { label: "início", href: "#inicio" },
   { label: "projetos", href: "#projetos" },
-  { label: "serviços", href: "#servicos" },
+  { label: "sites", href: "/sites" },
   { label: "terminal", href: "#terminal" },
   { label: "sobre", href: "#sobre" },
   { label: "contato", href: "#contato" },

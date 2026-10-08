@@ -12,12 +12,6 @@ const projectTypes = [
   "Outro",
 ];
 
-const empty: ContactForm = {
-  name: "",
-  projectType: projectTypes[0],
-  budget: "",
-  message: "",
-};
 
 type Errors = Partial<Record<keyof ContactForm, string>>;
 
@@ -39,8 +33,17 @@ const fieldClass =
   "w-full border border-line bg-transparent px-3 py-2.5 font-mono text-sm text-fg placeholder:text-muted/70 focus:border-accent";
 const labelClass = "mb-2 block font-mono text-xs text-muted";
 
-export default function WhatsAppForm() {
-  const [form, setForm] = useState<ContactForm>(empty);
+export default function WhatsAppForm({
+  defaultType = projectTypes[0],
+}: {
+  defaultType?: string;
+}) {
+  const [form, setForm] = useState<ContactForm>({
+    name: "",
+    projectType: defaultType,
+    budget: "",
+    message: "",
+  });
   const [errors, setErrors] = useState<Errors>({});
 
   function update<K extends keyof ContactForm>(key: K, value: ContactForm[K]) {
