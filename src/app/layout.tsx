@@ -75,7 +75,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important}`}</style>
         </noscript>
       </head>
-      <body className="flex min-h-full flex-col">
+      {/* extensoes de navegador (ex.: cz-shortcut-listen) injetam atributos no body antes do React */}
+      <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <script
           type="application/ld+json"
           // JSON-LD gerado por nos, nao vem de input do usuario
