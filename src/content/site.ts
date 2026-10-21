@@ -7,7 +7,7 @@
 export const site = {
   name: "Gustavo Rodrigues Lopes",
   shortName: "gustavo",
-  role: "Desenvolvedor backend",
+  role: "Desenvolvedor web",
   email: "guhrlopes999@gmail.com",
   // remetente dos e-mails de lead; o dominio precisa estar verificado no Resend
   leadFrom: "contato@desenvolvedorgustavolopes.com.br",
@@ -23,7 +23,8 @@ export const site = {
   location: "Minas Gerais · Brasil",
   available: true,
   availableLabel: "Disponível para novos projetos",
-  resume: "/curriculo-gustavo-rodrigues-lopes.pdf" as string | null,
+  // null esconde o botao "Baixar CV"; o PDF continua em public/ pro LinkedIn
+  resume: null as string | null,
   photo: {
     // Convertida de IMG_1709.HEIC — navegador nao le HEIC.
     src: "/gustavo.jpg" as string | null,
