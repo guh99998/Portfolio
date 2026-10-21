@@ -34,10 +34,9 @@ export const site = {
 export const about = {
   title: "sobre",
   paragraphs: [
-    // TODO: revisar com as suas palavras — os fatos vieram do seu currículo
-    "Me chamo Gustavo. Trabalho há alguns anos no administrativo de uma imobiliária, cuidando de planilhas, fechamentos e do ERP da empresa — e foi justamente ali que eu virei programador: cansei de ver gente perdendo semanas em processo manual e comecei a resolver isso com código.",
-    "O exemplo que melhor me descreve é o pref-scraper: a baixa de guias de IPTU levava cerca de uma semana de trabalho manual, e virou uma questão de minutos. Não foi um exercício de faculdade, foi um problema real que incomodava todo mundo e ninguém tinha resolvido.",
-    "Sou formado em Análise e Desenvolvimento de Sistemas pela FIAP e curso Engenharia de Software na UNINTER. Hoje atendo freelances de automação e sites, e busco uma posição como desenvolvedor backend.",
+    "Me chamo Gustavo e crio sites e landing pages sob medida para profissionais e pequenos negócios que querem ser encontrados e receber contato sem depender só de rede social ou de indicação.",
+    "Antes de programar, passei anos do outro lado do balcão: desde 2020 trabalho no administrativo de uma imobiliária, cuidando de fechamentos, boletos e do sistema da empresa. Por isso penso o site como ferramenta de negócio — cada página existe para levar o visitante até uma conversa com você, não só para ficar bonita.",
+    "Sou formado em Análise e Desenvolvimento de Sistemas pela FIAP e curso Engenharia de Software na UNINTER. Já coloquei no ar sites para um videomaker, um corretor de imóveis, um psicólogo e um mentor de vendas no Mercado Livre. Cuido de tudo, do layout à publicação no seu domínio, e você fala direto comigo do começo ao fim.",
   ],
 };
 

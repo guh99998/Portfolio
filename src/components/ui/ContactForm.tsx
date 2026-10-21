@@ -68,8 +68,7 @@ export default function ContactForm() {
       <div role="status" className="border border-accent p-6">
         <p className="font-mono text-lg text-accent">Recebi sua mensagem!</p>
         <p className="mt-3 leading-relaxed text-muted">
-          Eu respondo no e-mail {form.email.trim()} em breve. Se preferir
-          adiantar a conversa, é só me chamar no WhatsApp.
+          Vou te responder em breve por e-mail ou pelo WhatsApp.
         </p>
       </div>
     );
@@ -212,7 +211,7 @@ export default function ContactForm() {
         </button>
 
         <p className="font-mono text-xs text-muted">
-          respondo por e-mail, sem compromisso
+          respondo por e-mail ou WhatsApp, sem compromisso
         </p>
       </div>
 
