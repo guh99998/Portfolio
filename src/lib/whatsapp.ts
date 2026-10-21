@@ -1,15 +1,9 @@
 import { site } from "@/content/site";
-
-export type ContactForm = {
-  name: string;
-  projectType: string;
-  budget: string;
-  message: string;
-};
+import type { ContactForm } from "@/lib/contact";
 
 /**
- * Monta a mensagem e devolve o link wa.me.
- * Sem backend: o lead so existe quando a pessoa conclui o envio no WhatsApp.
+ * Monta a mensagem e devolve o link wa.me. Plano B do formulario: se o
+ * e-mail falhar, o lead ainda consegue mandar tudo pelo WhatsApp.
  */
 export function buildWhatsAppLink(form: ContactForm): string {
   const lines = [

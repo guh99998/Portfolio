@@ -9,6 +9,8 @@ export const site = {
   shortName: "gustavo",
   role: "Desenvolvedor backend",
   email: "guhrlopes999@gmail.com",
+  // remetente dos e-mails de lead; o dominio precisa estar verificado no Resend
+  leadFrom: "contato@desenvolvedorgustavolopes.com.br",
   whatsapp: "5535998088138",
   github: "https://github.com/guh99998",
   linkedin:

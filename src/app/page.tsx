@@ -10,12 +10,12 @@ import {
 import About from "@/components/sections/About";
 import TerminalSection from "@/components/sections/TerminalSection";
 import Button from "@/components/ui/Button";
+import ContactForm from "@/components/ui/ContactForm";
 import ProjectCard from "@/components/ui/ProjectCard";
 import Reveal from "@/components/ui/Reveal";
 import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
 import StaggerGroup from "@/components/ui/StaggerGroup";
-import WhatsAppForm from "@/components/ui/WhatsAppForm";
 import { WhatsAppIcon } from "@/components/ui/icons";
 
 const jsonLd = [
@@ -198,7 +198,7 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <WhatsAppForm defaultType="Site ou landing page" />
+            <ContactForm />
           </Reveal>
         </div>
       </Section>
