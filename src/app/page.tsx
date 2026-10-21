@@ -11,6 +11,7 @@ import About from "@/components/sections/About";
 import TerminalSection from "@/components/sections/TerminalSection";
 import Button from "@/components/ui/Button";
 import ContactForm from "@/components/ui/ContactForm";
+import MatrixRain from "@/components/ui/MatrixRain";
 import ProjectCard from "@/components/ui/ProjectCard";
 import Reveal from "@/components/ui/Reveal";
 import Section from "@/components/ui/Section";
@@ -52,8 +53,24 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <Section id="inicio" padding="pt-16 pb-12 sm:pt-24 sm:pb-16">
-        <Reveal className="max-w-3xl">
+      <Section
+        id="inicio"
+        padding="pt-16 pb-12 sm:pt-24 sm:pb-16"
+        className="relative overflow-hidden"
+      >
+        {/*
+          Chuva atras do conteudo. A mascara apaga ela do lado esquerdo, onde
+          o texto vive — assim ela ocupa o vazio da direita sem disputar
+          legibilidade com o h1.
+        */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-20 [mask-image:linear-gradient(to_left,black_0%,black_30%,transparent_80%)] sm:opacity-30"
+        >
+          <MatrixRain />
+        </div>
+
+        <Reveal className="relative max-w-3xl">
           <p className="font-mono text-sm text-accent">{sitesPage.eyebrow}</p>
           <h1 className="mt-3 font-mono text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl lg:text-5xl">
             {sitesPage.title}
