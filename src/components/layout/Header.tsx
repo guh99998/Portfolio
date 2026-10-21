@@ -8,19 +8,14 @@ export default function Header() {
   const [active, setActive] = useState<string>("inicio");
   const [open, setOpen] = useState(false);
 
-  // Fora da home, "#projetos" apontaria pra uma ancora que nao existe naquela
-  // pagina. Prefixar com "/" manda pra home e depois rola ate a secao.
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-  // href "/pagina" e rota de verdade; "#secao" e ancora da home
-  const to = (href: string) =>
-    href.startsWith("/") ? href : isHome ? href : `/${href}`;
+  // Fora da home (ex.: /projetos), "#cases" apontaria pra uma ancora que nao
+  // existe naquela pagina. Prefixar com "/" manda pra home e rola ate a secao.
+  const isHome = usePathname() === "/";
+  const to = (href: string) => (isHome ? href : `/${href}`);
 
   // scroll-spy: marca no menu a secao que esta na tela
   useEffect(() => {
-    const ids = nav
-      .filter((item) => item.href.startsWith("#"))
-      .map((item) => item.href.slice(1));
+    const ids = nav.map((item) => item.href.slice(1));
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -83,10 +78,7 @@ export default function Header() {
           <nav aria-label="Navegação principal" className="hidden md:block">
             <ul className="flex items-center gap-4 lg:gap-6">
               {nav.map((item) => {
-                const id = item.href.slice(1);
-                const isActive = item.href.startsWith("/")
-                  ? pathname === item.href
-                  : isHome && active === id;
+                const isActive = isHome && active === item.href.slice(1);
 
                 return (
                   <li key={item.href}>

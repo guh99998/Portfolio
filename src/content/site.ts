@@ -4,8 +4,6 @@
  * sem precisar tocar em nenhum componente.
  */
 
-export type HeadlineSegment = { text: string; accent?: boolean };
-
 export const site = {
   name: "Gustavo Rodrigues Lopes",
   shortName: "gustavo",
@@ -16,6 +14,9 @@ export const site = {
   linkedin:
     "https://www.linkedin.com/in/gustavo-rodrigues-lopes-b41046213/",
   url: "https://desenvolvedorgustavolopes.com.br",
+  title: "Criação de sites e landing pages",
+  description:
+    "Criação de landing pages e sites sob medida, com SEO técnico, formulário direto no WhatsApp e domínio configurado. Orçamento sob medida para cada projeto.",
   // TODO: troque por sua cidade — busca de freela de site é muito local.
   location: "Minas Gerais · Brasil",
   available: true,
@@ -28,23 +29,6 @@ export const site = {
   },
 };
 
-export const hero = {
-  headline: [
-    { text: "Eu construo " },
-    { text: "automações", accent: true },
-    { text: " e " },
-    { text: "sistemas", accent: true },
-    { text: " que tiram o trabalho manual das suas mãos." },
-  ] as HeadlineSegment[],
-  intro:
-    "Sou desenvolvedor backend. Transformo processos repetitivos em código que roda sozinho — automações, integrações e análise de dados — pra que o seu time gaste tempo com o que só gente consegue fazer.",
-  // TODO: revisar com as suas palavras. O numero e real, do pref-scraper.
-  detail:
-    "Não aprendi isso num curso: aprendi vendo gente perder semanas em tarefa repetitiva, todo mês, no meu próprio trabalho. A consulta de IPTU de centenas de imóveis levava cerca de uma semana e virou uma execução de três minutos. É esse tipo de conta que eu venho fazer na sua empresa.",
-  primaryCta: { label: "Falar comigo", href: "#contato" },
-  secondaryCta: { label: "Ver projetos", href: "#projetos" },
-};
-
 export const about = {
   title: "sobre",
   paragraphs: [
@@ -55,16 +39,10 @@ export const about = {
   ],
 };
 
-export const contact = {
-  title: "contato",
-  lead: "Tem um processo manual que consome o tempo do seu time, ou um projeto pra tirar do papel?",
-  body: "Me chama por e-mail, GitHub ou LinkedIn e conta o que você precisa. Eu respondo com uma primeira leitura do problema e um caminho possível — sem compromisso e sem enrolação.",
-};
-
 export const nav = [
   { label: "início", href: "#inicio" },
-  { label: "projetos", href: "#projetos" },
-  { label: "sites", href: "/sites" },
+  { label: "sites", href: "#cases" },
+  { label: "opções", href: "#opcoes" },
   { label: "terminal", href: "#terminal" },
   { label: "sobre", href: "#sobre" },
   { label: "contato", href: "#contato" },

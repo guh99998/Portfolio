@@ -18,9 +18,8 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-const title = `${site.name} — ${site.role}`;
-const description =
-  "Desenvolvedor backend. Automação de processos, integrações, APIs e sites sob medida para empresas que querem parar de fazer trabalho repetitivo na mão.";
+const title = `${site.title} — ${site.name}`;
+const description = site.description;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -30,12 +29,11 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
-    "desenvolvedor backend",
-    "automação de processos",
-    "freelancer",
-    "Python",
-    "integração de sistemas",
     "criação de sites",
+    "landing page",
+    "site sob medida",
+    "SEO técnico",
+    "site para profissionais autônomos",
   ],
   authors: [{ name: site.name }],
   creator: site.name,

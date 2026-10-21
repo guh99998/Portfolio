@@ -19,23 +19,6 @@ export default function Footer() {
           <p className="mt-1 text-sm text-muted">
             {site.role} · {site.location}
           </p>
-          <nav aria-label="Páginas" className="mt-3 flex flex-wrap gap-x-5 gap-y-1">
-            {[
-              { href: "/projetos", label: "projetos" },
-              { href: "/sites", label: "criação de sites" },
-              { href: "/glossario", label: "glossário de tecnologia" },
-              { href: "/aprendizado", label: "aprendizado" },
-            ].map((page) => (
-              <a
-                key={page.href}
-                href={page.href}
-                className="font-mono text-sm text-muted transition-colors hover:text-accent"
-              >
-                <span className="text-accent">#</span>
-                {page.label}
-              </a>
-            ))}
-          </nav>
         </div>
 
         <ul className="flex items-center gap-5">

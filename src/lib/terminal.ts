@@ -1,5 +1,4 @@
 import { sortedProjects } from "@/content/projects";
-import { byCategory, counts, mastered } from "@/content/roadmap";
 import { site } from "@/content/site";
 
 export type Line = { kind: "in" | "out" | "err" | "accent"; text: string };
@@ -23,8 +22,7 @@ const catalog: Record<
 > = {
   ajuda: { desc: "lista os comandos disponíveis", alias: ["help", "?"] },
   sobre: { desc: "quem eu sou", alias: ["whoami"] },
-  projetos: { desc: "o que eu já construí", alias: ["ls"] },
-  stack: { desc: "as tecnologias que eu uso" },
+  sites: { desc: "sites que eu já coloquei no ar", alias: ["ls", "projetos"] },
   contato: { desc: "como falar comigo", alias: ["email"] },
   cobrinha: { desc: "sim, dá pra jogar aqui dentro", alias: ["snake"] },
   matrix: { desc: "chuva de caracteres, estilo Matrix", alias: ["cmatrix"] },
@@ -103,33 +101,18 @@ export function runCommand(raw: string): CommandResult {
         ],
       };
 
-    case "projetos":
+    case "sites":
       return {
         lines: [
-          out(`${sortedProjects.length} projeto(s):`),
+          out(`${sortedProjects.length} site(s) no ar:`),
           out(""),
           ...sortedProjects.flatMap((project) => [
             accent(`  ${project.title}${project.status === "andamento" ? " (em construção)" : ""}`),
             out(`    ${project.problem}`),
-            out(`    [${project.tags.join(", ")}]`),
+            ...(project.live ? [out(`    ${project.live}`)] : []),
             out(""),
           ]),
-          out("veja todos com link e imagem em /projetos."),
-        ],
-      };
-
-    case "stack":
-      return {
-        lines: [
-          out(`domino ${counts.domino} de ${counts.total} tecnologias:`),
-          out(""),
-          ...byCategory(mastered).flatMap((group) => [
-            accent(`  ${group.category}`),
-            out(`    ${group.items.map((tech) => tech.name).join("  ")}`),
-          ]),
-          out(""),
-          out("o quadro completo (estudando / preciso estudar) está"),
-          out("em /aprendizado."),
+          out("veja todos com imagem em /projetos."),
         ],
       };
 

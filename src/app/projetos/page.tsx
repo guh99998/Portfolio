@@ -8,14 +8,14 @@ import StaggerGroup from "@/components/ui/StaggerGroup";
 import { ArrowIcon } from "@/components/ui/icons";
 
 const description =
-  "Automações, integrações e sites que eu construí — com o problema que cada um resolveu e o resultado que deu.";
+  "Sites e landing pages que eu coloquei no ar — com o problema de cada cliente e o que o site resolveu.";
 
 export const metadata: Metadata = {
   title: "Projetos",
   description,
   alternates: { canonical: "/projetos" },
   openGraph: {
-    type: "article",
+    type: "website",
     locale: "pt_BR",
     url: `${site.url}/projetos`,
     title: `Projetos — ${site.name}`,
@@ -39,9 +39,9 @@ export default function ProjetosPage() {
         </h1>
 
         <p className="mt-6 leading-relaxed text-muted">
-          Tudo que eu construí, do processo manual que virou script ao site que
-          está no ar. Descrevi cada um pelo problema que ele resolveu, não pela
-          lista de tecnologias — porque é o problema que se parece com o seu.
+          Todos os sites que eu já coloquei no ar. Descrevi cada um pelo
+          problema que o cliente tinha, não pela lista de tecnologias — porque
+          é o problema que se parece com o seu.
         </p>
       </Reveal>
 
@@ -55,16 +55,16 @@ export default function ProjetosPage() {
 
       <Reveal className="mt-16 border border-line bg-surface p-6 sm:p-8">
         <p className="font-mono text-lg tracking-tight text-balance">
-          Tem um processo parecido com algum desses?
+          Quer um site assim pro seu negócio?
         </p>
         <p className="mt-3 max-w-xl leading-relaxed text-muted">
-          Se você reconheceu o seu problema em algum projeto aqui, provavelmente
-          eu já sei por onde começar. Me conta como funciona hoje.
+          Me conta o que você faz e o que o site precisa resolver. Eu respondo
+          com uma primeira leitura e um valor fechado — sem compromisso.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-4">
           <Button href="/#contato">
-            Falar comigo
+            Pedir orçamento
             <ArrowIcon className="h-4 w-4" />
           </Button>
           <Button href="/" variant="ghost">

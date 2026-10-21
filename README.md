@@ -21,7 +21,7 @@ pra mudar conteúdo:
 | Arquivo | O que tem |
 | --- | --- |
 | `site.ts` | nome, e-mail, WhatsApp, GitHub, LinkedIn, domínio, foto, CV, headline do topo, texto do "sobre" e do "contato", itens do menu |
-| `projects.ts` | os projetos do `#projetos` |
+| `projects.ts` | os sites de "sites no ar" — passo a passo em [`PROJETOS.md`](PROJETOS.md) |
 | `process.ts` | os 3 passos do "como funciona" |
 | `stack.ts` | as caixas de tecnologia + a faixa escura do topo |
 

@@ -45,7 +45,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <p className="font-mono text-sm text-accent">→ {project.outcome}</p>
         ) : null}
 
-        {project.live || project.repo ? (
+        {project.live || project.repo || project.links?.length ? (
           <div className="mt-auto flex flex-wrap items-center gap-4 pt-2">
             {project.live ? (
               <a
@@ -59,6 +59,20 @@ export default function ProjectCard({ project }: { project: Project }) {
                 <span className="sr-only">— {project.title}</span>
               </a>
             ) : null}
+
+            {project.links?.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-mono text-sm text-muted transition-colors hover:text-accent"
+              >
+                {link.label}
+                <ExternalIcon className="h-3.5 w-3.5" />
+                <span className="sr-only">— {project.title}</span>
+              </a>
+            ))}
 
             {project.repo ? (
               <a

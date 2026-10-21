@@ -16,8 +16,8 @@ export default function TerminalSection() {
           </p>
           <p className="mt-4 font-mono text-sm text-muted">
             tente: <span className="text-accent">ajuda</span> ·{" "}
-            <span className="text-accent">projetos</span> ·{" "}
-            <span className="text-accent">stack</span> ·{" "}
+            <span className="text-accent">sites</span> ·{" "}
+            <span className="text-accent">cobrinha</span> ·{" "}
             <span className="text-accent">contato</span>
           </p>
         </Reveal>
