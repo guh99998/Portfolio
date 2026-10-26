@@ -64,7 +64,7 @@ os campos mudarem.
 - A ordem do array `projects` é a ordem na tela.
 - `featured: true` → aparece na home. Manter **3** destaques (uma linha cheia).
   Hoje: Jonathas Films, José Carlos Magalhães (psicólogo), Lucas Messias.
-  Evandro Piassa fica só em `/projetos`.
+  O site modelo de imobiliária (Django, feito por mim) fica só em `/projetos`.
 - `links` → botões extras além de "Ver ao vivo" (ex.: o linktree do Lucas).
 - `problem` é uma frase sobre o problema do cliente, não lista de features.
 - Prints em `public/projects/<slug>.jpg`, **1280×720**. Dá pra capturar com

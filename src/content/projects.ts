@@ -64,14 +64,14 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "evandro-piassa",
-    title: "Evandro Piassa Corretor",
+    slug: "imobiliaria-modelo",
+    title: "Site modelo para imobiliária",
     problem:
-      "Um corretor não tinha canal próprio para captar clientes e dependia só de indicação e rede social.",
-    outcome: "Formulário que cai direto no WhatsApp",
-    tags: ["React", "Vite", "TypeScript"],
-    live: "https://evandropiassacorretor.com.br/",
-    image: "/projects/evandro-piassa.jpg",
+      "Uma imobiliária precisava de um site com busca de imóveis e um painel próprio para cadastrar o estoque e acompanhar os clientes, sem depender de portal.",
+    outcome: "Painel com cadastro de imóveis, CRM de clientes e contratos prontos",
+    tags: ["Django", "Python", "HTMX", "Tailwind", "PostgreSQL"],
+    live: "https://imobiliaria.desenvolvedorgustavolopes.com.br/",
+    image: "/projects/imobiliaria-modelo.jpg",
     status: "pronto",
   },
 ];
