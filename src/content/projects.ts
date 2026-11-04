@@ -64,6 +64,18 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "wallace-pinheiro",
+    title: "Wallace Pinheiro · Grupo Alyon",
+    problem:
+      "Um consultor de marketplaces precisava de um site que provasse resultado e levasse o visitante direto para a conversa no WhatsApp, além de uma página de links para as redes.",
+    outcome: "Site institucional + página de links própria no domínio da agência",
+    tags: ["React", "Vite", "TypeScript", "SSG", "Cloudflare"],
+    live: "https://grupoalyon.com.br/",
+    links: [{ label: "Página de links", href: "https://links.grupoalyon.com.br/" }],
+    image: "/projects/wallace-pinheiro.jpg",
+    status: "pronto",
+  },
+  {
     slug: "imobiliaria-modelo",
     title: "Site modelo para imobiliária",
     problem:
