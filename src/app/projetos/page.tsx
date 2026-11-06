@@ -5,10 +5,15 @@ import Button from "@/components/ui/Button";
 import ProjectCard from "@/components/ui/ProjectCard";
 import Reveal from "@/components/ui/Reveal";
 import StaggerGroup from "@/components/ui/StaggerGroup";
-import { ArrowIcon } from "@/components/ui/icons";
+import {
+  ArrowIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  MailIcon,
+} from "@/components/ui/icons";
 
 const description =
-  "Sites e landing pages que eu coloquei no ar — com o problema de cada cliente e o que o site resolveu.";
+  "Projetos de Gustavo Lopes, desenvolvedor web: sistemas em Java e Python e sites para clientes, com o problema que cada um resolve.";
 
 export const metadata: Metadata = {
   title: "Projetos",
@@ -39,10 +44,32 @@ export default function ProjetosPage() {
         </h1>
 
         <p className="mt-6 leading-relaxed text-muted">
-          Todos os sites que eu já coloquei no ar. Descrevi cada um pelo
-          problema que o cliente tinha, não pela lista de tecnologias — porque
-          é o problema que se parece com o seu.
+          Sou {site.name}, desenvolvedor web. Formado em Análise e
+          Desenvolvimento de Sistemas pela FIAP e cursando Engenharia de
+          Software na UNINTER. Aqui estão os projetos que eu construí e
+          coloquei no ar, de sistemas com Java e Python a sites para clientes
+          reais em React.
         </p>
+
+        <p className="mt-4 font-mono text-sm leading-relaxed text-muted">
+          <span className="text-accent">stack:</span> Java · Spring Boot ·
+          Python · Django · React · TypeScript · Next.js · PostgreSQL · Docker
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-4">
+          <Button href={site.github} variant="ghost" external>
+            <GitHubIcon className="h-4 w-4" />
+            GitHub
+          </Button>
+          <Button href={site.linkedin} variant="ghost" external>
+            <LinkedInIcon className="h-4 w-4" />
+            LinkedIn
+          </Button>
+          <Button href={`mailto:${site.email}`} variant="ghost" external>
+            <MailIcon className="h-4 w-4" />
+            E-mail
+          </Button>
+        </div>
       </Reveal>
 
       <StaggerGroup className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

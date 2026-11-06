@@ -12,8 +12,11 @@ Site de venda de **criação de sites e landing pages** do Gustavo
 objetivo de cada página é levar o visitante a pedir orçamento.
 
 Até out/2026 era um portfólio de desenvolvedor backend (projetos, stack,
-glossário, aprendizado). Isso foi removido de propósito — o foco agora é só
-vender sites. Não reintroduzir seções de "vaga/recrutador" sem pedido.
+glossário, aprendizado). Isso foi removido para focar em vender sites. Em
+06/11/2026 o Gustavo pediu um foco misto: a home continua sendo de venda, mas
+`/projetos` também serve de portfólio profissional (o QR code do currículo
+aponta para `/projetos?ref=cv`). Não reintroduzir glossário/aprendizado nem
+seções de "vaga/recrutador" na home sem pedido.
 
 ## Stack e comandos
 
@@ -34,7 +37,10 @@ existe mais, é cache velho do dev server: `rm -rf .next` e rodar de novo.
   ao fundo — o Gustavo quer manter) → sites no ar (só os `featured`) → o que
   está incluso → opções → como funciona → terminal → sobre → dúvidas →
   pedir orçamento (formulário).
-- `/projetos` (`src/app/projetos/page.tsx`): todos os projetos.
+- `/projetos` (`src/app/projetos/page.tsx`): apresentação profissional (stack,
+  GitHub, LinkedIn, e-mail) + todos os projetos. Inclui projetos de código
+  (moneyPilot, pref-scraper) além dos sites de clientes; só repos **públicos**
+  entram em `repo`.
 - `/sites`, `/glossario`, `/aprendizado`: redirect 308 para `/`
   (`next.config.ts`), porque já foram indexadas.
 - `sitemap.ts` lista `/` e `/projetos`.
@@ -62,6 +68,8 @@ Passo a passo para humanos em `PROJETOS.md` — manter os dois em sincronia se
 os campos mudarem.
 
 - A ordem do array `projects` é a ordem na tela.
+- Os `featured` da home são só sites de clientes; moneyPilot e pref-scraper
+  ficam só em `/projetos` (o moneyPilot tem print copiado do README do repo).
 - `featured: true` → aparece na home. Manter **3** destaques (uma linha cheia).
   Hoje: Jonathas Films, José Carlos Magalhães (psicólogo), Lucas Messias.
   O site modelo de imobiliária (Django, feito por mim) fica só em `/projetos`.

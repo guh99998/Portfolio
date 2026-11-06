@@ -28,6 +28,38 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
+    slug: "moneypilot",
+    title: "moneyPilot",
+    problem:
+      "Controle financeiro pessoal gratuito e de código aberto: contas, orçamento mensal, contas a pagar e a receber, fatura de cartão e previsão de fluxo de caixa.",
+    outcome: "API REST com JWT, testes com Postgres real e deploy em VPS com CI",
+    tags: ["Java 21", "Spring Boot", "PostgreSQL", "Flyway", "Testcontainers", "Docker"],
+    live: "https://moneypilot.desenvolvedorgustavolopes.com.br/",
+    repo: "https://github.com/guh99998/moneyPilot",
+    image: "/projects/moneypilot.jpg",
+    status: "pronto",
+  },
+  {
+    slug: "crm-corretor",
+    title: "CRM Corretor",
+    problem:
+      "Os corretores de uma imobiliária controlavam clientes e vendas em planilhas e conversas soltas. Hoje têm um painel único, com cada um vendo só o que é seu.",
+    outcome: "Em produção, com perfis de admin, corretor e somente leitura (RLS no banco)",
+    tags: ["React", "TypeScript", "Tailwind", "Supabase", "PostgreSQL", "Vercel"],
+    status: "pronto",
+  },
+  {
+    slug: "pref-scraper",
+    title: "Pref Scraper",
+    problem:
+      "Consultar e baixar documentos de IPTU de centenas de imóveis no portal da prefeitura, um a um, levava horas. Hoje a planilha entra e os PDFs saem em minutos.",
+    outcome: "Automação por terminal: consulta, download de PDFs e processamento em lote",
+    tags: ["Python", "Selenium", "pandas", "Typer"],
+    repo: "https://github.com/guh99998/pref-scraper",
+    image: "/projects/pref-scraper.jpg",
+    status: "pronto",
+  },
+  {
     slug: "jonathas-films",
     title: "Jonathas Films",
     problem:
@@ -83,8 +115,18 @@ export const projects: Project[] = [
     outcome: "Painel com cadastro de imóveis, CRM de clientes e contratos prontos",
     tags: ["Django", "Python", "HTMX", "Tailwind", "PostgreSQL"],
     live: "https://imobiliaria.desenvolvedorgustavolopes.com.br/",
+    repo: "https://github.com/guh99998/imob-site",
     image: "/projects/imobiliaria-modelo.jpg",
     status: "pronto",
+  },
+  {
+    slug: "sapien",
+    title: "Sapien",
+    problem:
+      "Assistente que roda 100% no computador, sem API paga e sem enviar dado para fora, e responde perguntas de trabalho citando o arquivo de origem. Os números vêm de SQL executado, não do texto do modelo.",
+    tags: ["Python", "Ollama", "RAG", "Chroma", "DuckDB", "Streamlit"],
+    repo: "https://github.com/guh99998/sapien",
+    status: "andamento",
   },
 ];
 

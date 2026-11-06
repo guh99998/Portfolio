@@ -104,7 +104,7 @@ export function runCommand(raw: string): CommandResult {
     case "sites":
       return {
         lines: [
-          out(`${sortedProjects.length} site(s) no ar:`),
+          out(`${sortedProjects.length} projeto(s):`),
           out(""),
           ...sortedProjects.flatMap((project) => [
             accent(`  ${project.title}${project.status === "andamento" ? " (em construção)" : ""}`),
