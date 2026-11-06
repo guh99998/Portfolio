@@ -64,7 +64,7 @@ Todo texto vive em `src/content/` — componentes não têm copy fixa.
 
 Tom do texto: **comercial, em pt-BR, falando com quem contrata** (profissional
 autônomo / pequeno negócio), primeira pessoa, direto. O cargo exibido é
-"Desenvolvedor web". O botão "Baixar CV" está desligado (`site.resume = null`).
+"Desenvolvedor". O botão "Baixar CV" está desligado de propósito (`site.resume = null`): o Gustavo decidiu que o site já é o currículo. Não religar sem pedido.
 
 ## Projetos (cases)
 

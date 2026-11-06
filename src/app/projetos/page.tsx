@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/icons";
 
 const description =
-  "Projetos de Gustavo Lopes, desenvolvedor web: sistemas em Java e Python e sites para clientes, com o problema que cada um resolve.";
+  "Projetos de Gustavo Lopes, desenvolvedor: sistemas em Java e Python e sites para clientes, com o problema que cada um resolve.";
 
 export const metadata: Metadata = {
   title: "Projetos",
@@ -44,7 +44,7 @@ export default function ProjetosPage() {
         </h1>
 
         <p className="mt-6 leading-relaxed text-muted">
-          Sou {site.name}, desenvolvedor web. Formado em Análise e
+          Sou {site.name}, desenvolvedor. Formado em Análise e
           Desenvolvimento de Sistemas pela FIAP e cursando Engenharia de
           Software na UNINTER. Aqui estão os projetos que eu construí e
           coloquei no ar, de sistemas com Java e Python a sites para clientes
