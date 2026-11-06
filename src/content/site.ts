@@ -16,13 +16,13 @@ export const site = {
   linkedin:
     "https://www.linkedin.com/in/gustavo-rodrigues-lopes-b41046213/",
   url: "https://desenvolvedorgustavolopes.com.br",
-  title: "Criação de sites e landing pages",
+  title: "Desenvolvedor web",
   description:
-    "Criação de landing pages e sites sob medida, com SEO técnico, formulário direto no WhatsApp e domínio configurado. Orçamento sob medida para cada projeto.",
+    "Portfólio de Gustavo Rodrigues Lopes, desenvolvedor web: sistemas em Java e Python, sites em React e Next.js. Também crio landing pages e sites sob medida.",
   // TODO: troque por sua cidade — busca de freela de site é muito local.
   location: "Minas Gerais · Brasil",
   available: true,
-  availableLabel: "Disponível para novos projetos",
+  availableLabel: "Aberto a oportunidades e novos projetos",
   // null esconde o botao "Baixar CV"; o PDF continua em public/ pro LinkedIn
   resume: null as string | null,
   photo: {
@@ -35,17 +35,25 @@ export const site = {
 export const about = {
   title: "sobre",
   paragraphs: [
-    "Me chamo Gustavo e crio sites e landing pages sob medida para profissionais e pequenos negócios que querem ser encontrados e receber contato sem depender só de rede social ou de indicação.",
-    "Antes de programar, passei anos do outro lado do balcão: desde 2020 trabalho no administrativo de uma imobiliária, cuidando de fechamentos, boletos e do sistema da empresa. Por isso penso o site como ferramenta de negócio — cada página existe para levar o visitante até uma conversa com você, não só para ficar bonita.",
-    "Sou formado em Análise e Desenvolvimento de Sistemas pela FIAP e curso Engenharia de Software na UNINTER. Já coloquei no ar sites para um videomaker, um corretor de imóveis, um psicólogo e um mentor de vendas no Mercado Livre. Cuido de tudo, do layout à publicação no seu domínio, e você fala direto comigo do começo ao fim.",
+    "Me chamo Gustavo e sou desenvolvedor web. Construo sistemas e sites de ponta a ponta e coloco no ar: de APIs em Java e Python a interfaces em React, com banco de dados, testes e deploy.",
+    "Antes de programar, passei anos do outro lado do balcão: desde 2020 trabalho no administrativo de uma imobiliária, cuidando de fechamentos, boletos e do sistema da empresa. Por isso penso o software como ferramenta de negócio: ele existe para resolver um problema real de quem usa.",
+    "Sou formado em Análise e Desenvolvimento de Sistemas pela FIAP e curso Engenharia de Software na UNINTER. Além dos meus projetos, já coloquei no ar sites para um videomaker, um corretor de imóveis, um psicólogo e um mentor de vendas no Mercado Livre, sempre falando direto com o cliente, do layout à publicação.",
   ],
+};
+
+/** Texto do topo da home: portfólio e recrutadores. A venda começa em "servicos". */
+export const hero = {
+  eyebrow: "desenvolvedor web",
+  title: "Sistemas e sites que saem do papel e vão para produção.",
+  intro:
+    "Sou Gustavo Rodrigues Lopes. Construo de ponta a ponta, de APIs em Java e Python a interfaces em React, e já coloquei no ar projetos para clientes reais. Abaixo estão os que mais me orgulham.",
 };
 
 export const nav = [
   { label: "início", href: "#inicio" },
-  { label: "sites", href: "#cases" },
-  { label: "opções", href: "#opcoes" },
-  { label: "terminal", href: "#terminal" },
+  { label: "projetos", href: "#cases" },
   { label: "sobre", href: "#sobre" },
-  { label: "contato", href: "#contato" },
+  { label: "terminal", href: "#terminal" },
+  { label: "serviços", href: "#servicos" },
+  { label: "orçamento", href: "#contato" },
 ] as const;

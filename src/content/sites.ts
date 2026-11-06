@@ -3,12 +3,11 @@
  */
 
 export const sitesPage = {
-  eyebrow: "criação de sites e landing pages",
-  title: "Um site seu, no ar e encontrável no Google.",
+  /** Faixa que abre a parte de venda da home. */
+  title: "Quer um projeto seu?",
   intro:
-    "Construo landing pages e sites sob medida — sem template genérico, do design à publicação no seu domínio. O formulário cai direto no seu WhatsApp, então quem chega vira conversa.",
-  ctaLabel: "Pedir orçamento no WhatsApp",
-  whatsappMessage: "Olá, Gustavo! Vim pela página de sites e quero um orçamento.",
+    "Além do trabalho como desenvolvedor, crio landing pages e sites sob medida para profissionais e pequenos negócios: sem template genérico, do design à publicação no seu domínio. O formulário cai direto no seu WhatsApp, então quem chega vira conversa.",
+  ctaLabel: "Veja como funciona",
 };
 
 export const included = [
@@ -86,6 +85,6 @@ export const faq = [
   },
   {
     q: "Consigo ver um site que você já fez?",
-    a: "Sim, os cases estão logo acima, todos no ar.",
+    a: "Sim, a página de projetos tem todos os sites que já coloquei no ar, com link ao vivo.",
   },
 ];

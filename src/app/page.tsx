@@ -1,5 +1,5 @@
 import { featuredProjects, hasMoreProjects } from "@/content/projects";
-import { site } from "@/content/site";
+import { hero, site } from "@/content/site";
 import {
   faq,
   included,
@@ -17,7 +17,7 @@ import Reveal from "@/components/ui/Reveal";
 import Section from "@/components/ui/Section";
 import SectionTitle from "@/components/ui/SectionTitle";
 import StaggerGroup from "@/components/ui/StaggerGroup";
-import { WhatsAppIcon } from "@/components/ui/icons";
+import { ArrowIcon, GitHubIcon, LinkedInIcon, MailIcon } from "@/components/ui/icons";
 
 const jsonLd = [
   {
@@ -39,10 +39,6 @@ const jsonLd = [
     })),
   },
 ];
-
-const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(
-  sitesPage.whatsappMessage,
-)}`;
 
 export default function Home() {
   return (
@@ -71,27 +67,33 @@ export default function Home() {
         </div>
 
         <Reveal className="relative max-w-3xl">
-          <p className="font-mono text-sm text-accent">{sitesPage.eyebrow}</p>
+          <p className="font-mono text-sm text-accent">{hero.eyebrow}</p>
           <h1 className="mt-3 font-mono text-3xl leading-tight font-medium tracking-tight text-balance sm:text-4xl lg:text-5xl">
-            {sitesPage.title}
+            {hero.title}
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-            {sitesPage.intro}
+            {hero.intro}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Button href={whatsappHref} external>
-              <WhatsAppIcon className="h-4 w-4" />
-              {sitesPage.ctaLabel}
+            <Button href="#cases">Ver projetos</Button>
+            <Button href={site.github} variant="ghost" external>
+              <GitHubIcon className="h-4 w-4" />
+              GitHub
             </Button>
-            <Button href="#cases" variant="ghost">
-              Ver sites no ar
+            <Button href={site.linkedin} variant="ghost" external>
+              <LinkedInIcon className="h-4 w-4" />
+              LinkedIn
+            </Button>
+            <Button href={`mailto:${site.email}`} variant="ghost" external>
+              <MailIcon className="h-4 w-4" />
+              E-mail
             </Button>
           </div>
         </Reveal>
       </Section>
 
       <Section id="cases" padding="py-12 sm:py-16">
-        <SectionTitle>sites no ar</SectionTitle>
+        <SectionTitle>projetos em destaque</SectionTitle>
         <StaggerGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featuredProjects.map((project) => (
             <Reveal key={project.slug} asChild className="h-full">
@@ -106,6 +108,44 @@ export default function Home() {
             </Button>
           </Reveal>
         ) : null}
+      </Section>
+
+      <About />
+
+      <TerminalSection />
+
+      <Section id="servicos" padding="py-12 sm:py-16">
+        <Reveal className="border border-accent bg-surface p-6 sm:p-8">
+          <p className="font-mono text-xl tracking-tight text-balance sm:text-2xl">
+            {sitesPage.title}
+          </p>
+          <p className="mt-4 max-w-2xl leading-relaxed text-muted">
+            {sitesPage.intro}
+          </p>
+          <div className="mt-6">
+            <Button href="#como-funciona">
+              {sitesPage.ctaLabel}
+              <ArrowIcon className="h-4 w-4 rotate-90" />
+            </Button>
+          </div>
+        </Reveal>
+      </Section>
+
+      <Section id="como-funciona" padding="py-12 sm:py-16">
+        <SectionTitle>como funciona</SectionTitle>
+        <StaggerGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, index) => (
+            <Reveal key={step.title} asChild className="border-t border-accent pt-4">
+              <span className="font-mono text-xs text-muted">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-1 font-mono text-base font-medium">
+                {step.title}
+              </h3>
+              <p className="mt-2 leading-relaxed text-muted">{step.text}</p>
+            </Reveal>
+          ))}
+        </StaggerGroup>
       </Section>
 
       <Section id="incluso" padding="py-12 sm:py-16">
@@ -155,27 +195,6 @@ export default function Home() {
           ))}
         </StaggerGroup>
       </Section>
-
-      <Section id="como-funciona" padding="py-12 sm:py-16">
-        <SectionTitle>como funciona</SectionTitle>
-        <StaggerGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, index) => (
-            <Reveal key={step.title} asChild className="border-t border-accent pt-4">
-              <span className="font-mono text-xs text-muted">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-1 font-mono text-base font-medium">
-                {step.title}
-              </h3>
-              <p className="mt-2 leading-relaxed text-muted">{step.text}</p>
-            </Reveal>
-          ))}
-        </StaggerGroup>
-      </Section>
-
-      <TerminalSection />
-
-      <About />
 
       <Section id="duvidas" padding="py-12 sm:py-16">
         <SectionTitle>dúvidas</SectionTitle>

@@ -33,10 +33,13 @@ existe mais, é cache velho do dev server: `rm -rf .next` e rodar de novo.
 
 ## Páginas
 
-- `/` (`src/app/page.tsx`): início (com a chuva de caracteres `MatrixRain`
-  ao fundo — o Gustavo quer manter) → sites no ar (só os `featured`) → o que
-  está incluso → opções → como funciona → terminal → sobre → dúvidas →
-  pedir orçamento (formulário).
+- `/` (`src/app/page.tsx`): **primeira metade é portfólio/recrutador, a venda
+  começa em "Quer um projeto seu?"**. Ordem: início (hero profissional, com a
+  chuva de caracteres `MatrixRain` ao fundo — o Gustavo quer manter) →
+  projetos em destaque (só os `featured`) → sobre → terminal → "quer um
+  projeto seu? veja como funciona" (`#servicos`) → como funciona → o que está
+  incluso → opções → dúvidas → pedir orçamento (formulário). O hero não tem
+  mais o botão de WhatsApp: tem Ver projetos, GitHub, LinkedIn e E-mail.
 - `/projetos` (`src/app/projetos/page.tsx`): apresentação profissional (stack,
   GitHub, LinkedIn, e-mail) + todos os projetos. Inclui projetos de código
   (moneyPilot, pref-scraper) além dos sites de clientes; só repos **públicos**
@@ -45,7 +48,8 @@ existe mais, é cache velho do dev server: `rm -rf .next` e rodar de novo.
   (`next.config.ts`), porque já foram indexadas.
 - `sitemap.ts` lista `/` e `/projetos`.
 
-O menu (`nav` em `site.ts`) só tem âncoras da home; o `Header` prefixa `/`
+O menu (`nav` em `site.ts`: início, projetos, sobre, terminal, serviços,
+orçamento) só tem âncoras da home; o `Header` prefixa `/`
 quando a página atual não é a home.
 
 ## Onde fica o conteúdo
@@ -68,11 +72,9 @@ Passo a passo para humanos em `PROJETOS.md` — manter os dois em sincronia se
 os campos mudarem.
 
 - A ordem do array `projects` é a ordem na tela.
-- Os `featured` da home são só sites de clientes; moneyPilot e pref-scraper
-  ficam só em `/projetos` (o moneyPilot tem print copiado do README do repo).
 - `featured: true` → aparece na home. Manter **3** destaques (uma linha cheia).
-  Hoje: Jonathas Films, José Carlos Magalhães (psicólogo), Lucas Messias.
-  O site modelo de imobiliária (Django, feito por mim) fica só em `/projetos`.
+  Hoje: moneyPilot, CRM Corretor, Pref Scraper (os de código, para
+  recrutador). Os sites de clientes e o Sapien ficam só em `/projetos`.
 - `links` → botões extras além de "Ver ao vivo" (ex.: o linktree do Lucas).
 - `problem` é uma frase sobre o problema do cliente, não lista de features.
 - Prints em `public/projects/<slug>.jpg`, **1280×720**. Dá pra capturar com
@@ -97,7 +99,8 @@ os campos mudarem.
   no servidor). Honeypot no campo `website`. E-mail só em texto puro.
 - Se o envio falhar, o form oferece mandar a mesma mensagem pelo WhatsApp
   (`src/lib/whatsapp.ts`). Erros aparecem nos logs da Vercel com prefixo `lead:`.
-- O botão de WhatsApp do topo da home é um canal à parte e continua.
+- O hero da home deixou de ter botão de WhatsApp (virou portfólio); o contato
+  de venda é o formulário no fim da página.
 
 ## Convenções
 

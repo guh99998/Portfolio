@@ -38,6 +38,7 @@ export const projects: Project[] = [
     repo: "https://github.com/guh99998/moneyPilot",
     image: "/projects/moneypilot.jpg",
     status: "pronto",
+    featured: true,
   },
   {
     slug: "crm-corretor",
@@ -48,6 +49,7 @@ export const projects: Project[] = [
     tags: ["React", "TypeScript", "Tailwind", "Supabase", "PostgreSQL", "Vercel"],
     image: "/projects/crm-corretor.jpg",
     status: "pronto",
+    featured: true,
   },
   {
     slug: "pref-scraper",
@@ -59,6 +61,7 @@ export const projects: Project[] = [
     repo: "https://github.com/guh99998/pref-scraper",
     image: "/projects/pref-scraper.jpg",
     status: "pronto",
+    featured: true,
   },
   {
     slug: "jonathas-films",
@@ -70,7 +73,6 @@ export const projects: Project[] = [
     live: "https://jonathasfilms.com.br/",
     image: "/projects/jonathas-films.jpg",
     status: "pronto",
-    featured: true,
   },
   {
     slug: "site-psicologo",
@@ -81,7 +83,6 @@ export const projects: Project[] = [
     live: "https://psicologojosemagalhaes.com.br/",
     image: "/projects/site-psicologo.jpg",
     status: "pronto",
-    featured: true,
   },
   {
     slug: "lucas-messias",
@@ -94,7 +95,6 @@ export const projects: Project[] = [
     links: [{ label: "Linktree", href: "https://links.lucasmessiasmentor.com.br/" }],
     image: "/projects/lucas-messias.jpg",
     status: "pronto",
-    featured: true,
   },
   {
     slug: "wallace-pinheiro",

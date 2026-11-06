@@ -22,7 +22,7 @@ const catalog: Record<
 > = {
   ajuda: { desc: "lista os comandos disponíveis", alias: ["help", "?"] },
   sobre: { desc: "quem eu sou", alias: ["whoami"] },
-  sites: { desc: "sites que eu já coloquei no ar", alias: ["ls", "projetos"] },
+  projetos: { desc: "projetos que eu construí", alias: ["ls", "sites"] },
   contato: { desc: "como falar comigo", alias: ["email"] },
   cobrinha: { desc: "sim, dá pra jogar aqui dentro", alias: ["snake"] },
   matrix: { desc: "chuva de caracteres, estilo Matrix", alias: ["cmatrix"] },
@@ -91,7 +91,7 @@ export function runCommand(raw: string): CommandResult {
           out(`${site.role} · ${site.location}`),
           out(""),
           out("Transformo processos manuais e repetitivos em código que roda"),
-          out("sozinho. Automação, integrações, APIs e sites sob medida."),
+          out("sozinho. Sistemas, automações, APIs e sites sob medida."),
           out(""),
           out(
             site.available
@@ -101,7 +101,7 @@ export function runCommand(raw: string): CommandResult {
         ],
       };
 
-    case "sites":
+    case "projetos":
       return {
         lines: [
           out(`${sortedProjects.length} projeto(s):`),
