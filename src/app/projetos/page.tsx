@@ -82,22 +82,34 @@ export default function ProjetosPage() {
 
       <Reveal className="mt-16 border border-line bg-surface p-6 sm:p-8">
         <p className="font-mono text-lg tracking-tight text-balance">
-          Quer um site assim pro seu negócio?
+          Vamos conversar?
         </p>
         <p className="mt-3 max-w-xl leading-relaxed text-muted">
-          Me conta o que você faz e o que o site precisa resolver. Eu respondo
-          com uma primeira leitura e um valor fechado — sem compromisso.
+          Estou aberto a oportunidades como desenvolvedor. Se o meu perfil faz
+          sentido para a sua equipe, me chame por e-mail ou pelo LinkedIn.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-4">
-          <Button href="/#contato">
-            Pedir orçamento
-            <ArrowIcon className="h-4 w-4" />
+          <Button href={`mailto:${site.email}`} external>
+            <MailIcon className="h-4 w-4" />
+            Falar comigo
           </Button>
-          <Button href="/" variant="ghost">
-            Voltar pro início
+          <Button href={site.linkedin} variant="ghost" external>
+            <LinkedInIcon className="h-4 w-4" />
+            LinkedIn
           </Button>
         </div>
+
+        <p className="mt-6 text-sm text-muted">
+          Também crio sites e landing pages para negócios.{" "}
+          <a
+            href="/"
+            className="inline-flex items-center gap-1 text-fg underline-offset-4 transition-colors hover:text-accent hover:underline"
+          >
+            Ver serviços
+            <ArrowIcon className="h-3.5 w-3.5" />
+          </a>
+        </p>
       </Reveal>
     </div>
   );

@@ -46,6 +46,7 @@ export const projects: Project[] = [
       "Os corretores de uma imobiliária controlavam clientes e vendas em planilhas e conversas soltas. Hoje têm um painel único, com cada um vendo só o que é seu.",
     outcome: "Em produção, com perfis de admin, corretor e somente leitura (RLS no banco)",
     tags: ["React", "TypeScript", "Tailwind", "Supabase", "PostgreSQL", "Vercel"],
+    image: "/projects/crm-corretor.jpg",
     status: "pronto",
   },
   {
