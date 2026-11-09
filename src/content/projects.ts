@@ -64,6 +64,18 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    slug: "analise-golpes",
+    title: "Golpes e Pix no Brasil",
+    problem:
+      "O Pix é apontado como causa da alta de golpes, mas os dados públicos estão espalhados em planilhas e APIs diferentes. Juntei oito anos de estelionato registrado, por estado, com as estatísticas do Pix num painel interativo.",
+    outcome: "Painel por estado com as limitações de cada fonte documentadas",
+    tags: ["Python", "pandas", "JavaScript", "Chart.js", "Vercel"],
+    live: "https://fraudes-pix.desenvolvedorgustavolopes.com.br/",
+    repo: "https://github.com/guh99998/analise-golpes",
+    image: "/projects/analise-golpes.jpg",
+    status: "pronto",
+  },
+  {
     slug: "jonathas-films",
     title: "Jonathas Films",
     problem:
